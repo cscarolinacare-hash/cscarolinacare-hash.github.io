@@ -262,38 +262,9 @@
             opacity: 0.9;
         }
 
-        /* Pet Images Section */
-        .pets-section {
-            background-color: white;
-            padding: 4rem 2rem;
-        }
-
-        .pets-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .pet-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .pet-image:hover {
-            transform: scale(1.05);
-        }
-
         @media (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .pets-grid {
-                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -318,10 +289,6 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .pets-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
 
             .section-header {
@@ -352,15 +319,7 @@
         <h2 class="section-header">Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <svg class="service-image" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#c4b5a0"/>
-                    <circle cx="200" cy="150" r="60" fill="#8b7355"/>
-                    <circle cx="180" cy="135" r="8" fill="#2c2c2c"/>
-                    <circle cx="220" cy="135" r="8" fill="#2c2c2c"/>
-                    <path d="M200,160 Q190,170 200,175 Q210,170 200,160" fill="#2c2c2c"/>
-                    <ellipse cx="165" cy="130" rx="15" ry="20" fill="#8b7355"/>
-                    <ellipse cx="235" cy="130" rx="15" ry="20" fill="#8b7355"/>
-                </svg>
+                <img src="data:image/jpeg;base64,YOUR_IMAGE0_BASE64_HERE" alt="Dog in car ready for a walk" class="service-image">
                 <div class="service-content">
                     <div class="service-name">1 Mile Walk</div>
                     <div class="service-price">$8.00</div>
@@ -371,17 +330,7 @@
             </div>
 
             <div class="service-card">
-                <svg class="service-image" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#d4c4b0"/>
-                    <ellipse cx="200" cy="180" rx="70" ry="50" fill="#a89070"/>
-                    <circle cx="200" cy="120" r="50" fill="#a89070"/>
-                    <circle cx="180" cy="110" r="6" fill="#2c2c2c"/>
-                    <circle cx="220" cy="110" r="6" fill="#2c2c2c"/>
-                    <path d="M200,125 L200,135" stroke="#2c2c2c" stroke-width="3"/>
-                    <path d="M190,135 Q200,145 210,135" fill="none" stroke="#2c2c2c" stroke-width="2"/>
-                    <ellipse cx="160" cy="100" rx="12" ry="25" fill="#a89070"/>
-                    <ellipse cx="240" cy="100" rx="12" ry="25" fill="#a89070"/>
-                </svg>
+                <img src="data:image/jpeg;base64,YOUR_IMAGE3_BASE64_HERE" alt="Dog playing outside" class="service-image">
                 <div class="service-content">
                     <div class="service-name">2 Mile Walk</div>
                     <div class="service-price">$15.00</div>
@@ -392,19 +341,7 @@
             </div>
 
             <div class="service-card">
-                <svg class="service-image" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#c9b8a3"/>
-                    <rect x="100" y="120" width="200" height="120" rx="15" fill="#9d8569"/>
-                    <circle cx="200" cy="100" r="45" fill="#9d8569"/>
-                    <circle cx="185" cy="90" r="6" fill="#2c2c2c"/>
-                    <circle cx="215" cy="90" r="6" fill="#2c2c2c"/>
-                    <ellipse cx="200" cy="105" rx="8" ry="6" fill="#2c2c2c"/>
-                    <path d="M185,110 Q200,118 215,110" fill="none" stroke="#2c2c2c" stroke-width="2"/>
-                    <ellipse cx="165" cy="85" rx="10" ry="18" fill="#9d8569"/>
-                    <ellipse cx="235" cy="85" rx="10" ry="18" fill="#9d8569"/>
-                    <circle cx="140" cy="200" r="12" fill="#8b7355"/>
-                    <circle cx="260" cy="200" r="12" fill="#8b7355"/>
-                </svg>
+                <img src="data:image/jpeg;base64,YOUR_IMAGE1_BASE64_HERE" alt="Dog relaxing at home" class="service-image">
                 <div class="service-content">
                     <div class="service-name">One Check-In</div>
                     <div class="service-price">$10.00</div>
@@ -419,58 +356,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="pets-section">
-        <h2 class="section-header">Our Happy Clients</h2>
-        <div class="pets-grid">
-            <svg class="pet-image" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="300" height="300" fill="#e8d5c4"/>
-                <circle cx="150" cy="140" r="70" fill="#d4a574"/>
-                <circle cx="130" cy="125" r="10" fill="#2c2c2c"/>
-                <circle cx="170" cy="125" r="10" fill="#2c2c2c"/>
-                <ellipse cx="150" cy="150" rx="12" ry="8" fill="#2c2c2c"/>
-                <path d="M140,160 Q150,170 160,160" fill="none" stroke="#2c2c2c" stroke-width="3"/>
-                <ellipse cx="105" cy="115" rx="18" ry="30" fill="#d4a574"/>
-                <ellipse cx="195" cy="115" rx="18" ry="30" fill="#d4a574"/>
-            </svg>
-            
-            <svg class="pet-image" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="300" height="300" fill="#d4c9bb"/>
-                <ellipse cx="150" cy="170" rx="80" ry="60" fill="#8b6f47"/>
-                <circle cx="150" cy="110" r="60" fill="#8b6f47"/>
-                <circle cx="130" cy="100" r="8" fill="#2c2c2c"/>
-                <circle cx="170" cy="100" r="8" fill="#2c2c2c"/>
-                <ellipse cx="150" cy="120" rx="10" ry="7" fill="#2c2c2c"/>
-                <path d="M135,130 Q150,142 165,130" fill="none" stroke="#2c2c2c" stroke-width="2"/>
-                <path d="M100,90 Q90,70 85,60" fill="none" stroke="#8b6f47" stroke-width="8"/>
-                <path d="M200,90 Q210,70 215,60" fill="none" stroke="#8b6f47" stroke-width="8"/>
-            </svg>
-            
-            <svg class="pet-image" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="300" height="300" fill="#c9bfb3"/>
-                <ellipse cx="150" cy="180" rx="70" ry="55" fill="#a0826d"/>
-                <circle cx="150" cy="120" r="55" fill="#a0826d"/>
-                <circle cx="135" cy="110" r="7" fill="#2c2c2c"/>
-                <circle cx="165" cy="110" r="7" fill="#2c2c2c"/>
-                <circle cx="150" cy="130" r="8" fill="#3d3d3d"/>
-                <path d="M140,140 Q150,148 160,140" fill="none" stroke="#2c2c2c" stroke-width="2"/>
-                <ellipse cx="120" cy="100" rx="15" ry="25" fill="#a0826d"/>
-                <ellipse cx="180" cy="100" rx="15" ry="25" fill="#a0826d"/>
-            </svg>
-            
-            <svg class="pet-image" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="300" height="300" fill="#ddd0c0"/>
-                <circle cx="150" cy="150" r="65" fill="#c4a57b"/>
-                <circle cx="132" cy="135" r="9" fill="#2c2c2c"/>
-                <circle cx="168" cy="135" r="9" fill="#2c2c2c"/>
-                <ellipse cx="150" cy="155" rx="11" ry="8" fill="#2c2c2c"/>
-                <path d="M142,165 Q150,173 158,165" fill="none" stroke="#2c2c2c" stroke-width="2.5"/>
-                <ellipse cx="115" cy="128" rx="16" ry="28" fill="#c4a57b"/>
-                <ellipse cx="185" cy="128" rx="16" ry="28" fill="#c4a57b"/>
-                <ellipse cx="150" cy="200" rx="50" ry="35" fill="#c4a57b"/>
-            </svg>
         </div>
     </section>
 
@@ -502,5 +387,14 @@
     <footer>
         <p>&copy; 2024 Palmetto Pups. All rights reserved. Made with ❤️ for your furry friends!</p>
     </footer>
+
+    <script>
+        // This script will load the images from the uploaded files
+        const images = {
+            image0: '/mnt/user-data/uploads/image0.jpeg',
+            image1: '/mnt/user-data/uploads/image1.jpeg',
+            image3: '/mnt/user-data/uploads/image3.jpeg'
+        };
+    </script>
 </body>
 </html>
