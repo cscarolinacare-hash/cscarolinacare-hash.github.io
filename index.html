@@ -19,22 +19,34 @@
         }
 
         header {
-            background: linear-gradient(135deg, #FF9A56 0%, #FF6B9D 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
             padding: 3rem 2rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        .header-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .palmetto-tree {
+            font-size: 3.5rem;
+        }
+
         header h1 {
             font-size: 3.5rem;
-            margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         header p {
             font-size: 1.3rem;
             opacity: 0.95;
+            font-style: italic;
         }
 
         section {
@@ -44,7 +56,7 @@
         }
 
         section:nth-child(even) {
-            background-color: #FFF9F5;
+            background-color: #f8fafc;
         }
 
         section:nth-child(odd) {
@@ -53,7 +65,7 @@
 
         .section-title {
             font-size: 2.5rem;
-            color: #FF6B9D;
+            color: #1e3a8a;
             margin-bottom: 2rem;
             text-align: center;
             position: relative;
@@ -69,6 +81,20 @@
             font-size: 1.5rem;
         }
 
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #475569;
+            line-height: 1.8;
+            text-align: center;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.1);
+            border: 2px solid #dbeafe;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,24 +108,24 @@
             padding: 2.5rem;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 3px solid #FFE5D9;
+            border: 3px solid #dbeafe;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(255,107,157,0.2);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.2);
         }
 
         .service-name {
             font-size: 1.8rem;
-            color: #FF6B9D;
+            color: #1e3a8a;
             margin-bottom: 1rem;
             font-weight: bold;
         }
 
         .service-price {
             font-size: 2.5rem;
-            color: #FF9A56;
+            color: #2563eb;
             margin-bottom: 1.5rem;
             font-weight: bold;
         }
@@ -125,21 +151,40 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #FF9A56;
+            color: #2563eb;
             font-weight: bold;
         }
 
+        .contact-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+        }
+
         .package-section {
-            background: linear-gradient(135deg, #FFE5D9 0%, #FFF9F5 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
             border-radius: 30px;
             padding: 4rem 2rem;
             margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(255,107,157,0.15);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
         }
 
         .package-header {
             font-size: 2rem;
-            color: #FF6B9D;
+            color: #1e3a8a;
             margin-bottom: 2.5rem;
             text-align: center;
             font-weight: 600;
@@ -152,11 +197,11 @@
             border-radius: 20px;
             padding: 3rem;
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-            border: 3px solid #FF9A56;
+            border: 3px solid #2563eb;
         }
 
         .package-badge {
-            background: linear-gradient(135deg, #FF9A56 0%, #FF6B9D 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
@@ -167,7 +212,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #1e3a8a;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -180,6 +225,15 @@
         }
 
         @media (max-width: 768px) {
+            .header-title {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .palmetto-tree {
+                font-size: 2.5rem;
+            }
+
             header h1 {
                 font-size: 2.5rem;
             }
@@ -199,14 +253,29 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .about-content {
+                font-size: 1.1rem;
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🐶 Palmetto Pups 🐶</h1>
-        <p>Trusted Dog Walking & Sitting Services</p>
+        <div class="header-title">
+            <span class="palmetto-tree">🌴</span>
+            <h1>Palmetto Pups</h1>
+        </div>
+        <p>Care You Can Trust</p>
     </header>
+
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            Hi! We're two responsible high school students with a genuine love for animals. As dedicated students and pet owners ourselves, we understand how important it is to have someone you can trust caring for your pets. We offer reliable dog walking and pet sitting services with a focus on safety, attention and plenty of love. Our goal is to give pet owners peace of mind while keeping your pets happy and active!
+        </div>
+    </section>
 
     <section id="walks">
         <h2 class="section-title">Tail-Wagging Walks</h2>
@@ -244,6 +313,9 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="mailto:cscarolinacare@gmail.com" class="contact-button">Contact Us</a>
         </div>
     </section>
 
