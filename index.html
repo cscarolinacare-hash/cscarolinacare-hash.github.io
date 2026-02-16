@@ -1,125 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolina Care Pet Sitting | Professional Pet Care</title>
+    <title>Carolina Care</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* CSS Styling */
-        :root {
-            --primary-teal: #e0f2f1; /* Soft background */
-            --accent-mint: #80cbc4;  /* Feminine accent */
-            --text-slate: #37474f;   /* Professional dark grey */
-            --white: #ffffff;
-            --cta-gold: #d4a373;     /* Subtle warm contrast for the button */
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-slate);
-            background-color: var(--primary-teal);
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        header {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #b2dfdb 0%, #e0f2f1 100%);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-slate);
-            letter-spacing: -1px;
-        }
-
-        .tagline {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #546e7a;
-            font-weight: 300;
-        }
-
-        /* Service Section */
-        .services-container {
-            display: flex;
-            justify-content: center;
-            padding: 50px 20px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 400px;
-            text-align: center;
-            border: 1px solid rgba(128, 203, 196, 0.3);
-        }
-
-        .service-card h2 {
-            color: var(--accent-mint);
-            font-size: 2rem;
-            margin-top: 0;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-slate);
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        /* Button Styling */
-        .book-now {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 40px;
-            background-color: var(--accent-mint);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px; /* Rounded for a softer look */
-            font-weight: bold;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .book-now:hover {
-            background-color: #4db6ac;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
-<body>
 
-    <header>
-        <h1>Carolina Care Pet Sitting</h1>
-        <div class="tagline">Care you can trust.</div>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center p-5 bg-white shadow-md">
+        <div class="text-2xl font-bold text-green-600">Carolina Care</div>
+        <div class="space-x-4">
+            <a href="#home" class="text-gray-700 hover:text-green-500">Home</a>
+            <a href="#services" class="text-gray-700 hover:text-green-500">Services</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="flex flex-col items-center justify-center h-screen bg-cover bg-center" style="background-image: url('https://via.placeholder.com/800x400.png?text=Happy+Dog');">
+        <div class="bg-white bg-opacity-75 p-10 rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-center text-green-600">Carolina Care</h1>
+            <p class="text-lg text-center mt-4">Dependable dog walking and pet sitting services provided by a responsible local student. Committed to safe, reliable, and attentive pet care.</p>
+        </div>
     </header>
 
-    <div class="services-container">
-        <section class="service-card">
-            <h2>Basic Walk</h2>
-            <span class="price">$15</span>
-            <p>A 30-minute neighborhood walk with a water refresh and an owner update included. Perfect for a mid-day break!</p>
-            <a href="mailto:hello@carolinacare.com" class="book-now">Book Now</a>
-        </section>
-    </div>
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-600 mb-10">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-white p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-green-600">Dog Walking</h3>
+                    <ul class="mt-4">
+                        <li class="my-2">Option A: Basic Walk (1 mile) — <strong>$8</strong></li>
+                        <li class="my-2">Option B: Long Walk (2 miles) — <strong>$15</strong></li>
+                    </ul>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-green-600">Pet Check-In</h3>
+                    <p class="mt-4"><strong>$8</strong></p>
+                    <ul class="mt-2 list-disc list-inside">
+                        <li>Bathroom break</li>
+                        <li>Water and food refill</li>
+                        <li>Playtime</li>
+                        <li>Photo updates</li>
+                    </ul>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-green-600">Full Care Package</h3>
+                    <p class="mt-4"><strong>$22</strong></p>
+                    <p class="mt-2">Includes one Basic Walk and two Daily Check-ins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        &copy; 2026 Carolina Care Pet Sitting. All rights reserved.
+    <!-- Footer -->
+    <footer class="bg-white py-5 mt-10">
+        <div class="container mx-auto text-center">
+            <a href="mailto:cscarolinacare@gmail.com" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300">Contact Us</a>
+            <p class="mt-4 text-gray-600">Serving the local community with care.</p>
+        </div>
     </footer>
-
 </body>
+
 </html>
