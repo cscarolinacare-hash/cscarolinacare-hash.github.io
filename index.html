@@ -35,10 +35,10 @@
             margin-bottom: 0.5rem;
         }
 
-        .palmetto-tree {
+        .logo-icon {
             width: 70px;
             height: 70px;
-            fill: white;
+            position: relative;
         }
 
         header h1 {
@@ -236,7 +236,7 @@
                 gap: 0.5rem;
             }
 
-            .palmetto-tree {
+            .logo-icon {
                 width: 60px;
                 height: 60px;
             }
@@ -271,35 +271,37 @@
 <body>
     <header>
         <div class="header-title">
-            <svg class="palmetto-tree" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
-                <!-- Realistic palmetto tree silhouette based on the uploaded image -->
-                <!-- Fronds (palm leaves) -->
-                <path d="M50,25 Q30,20 20,15 Q15,13 12,10 L15,12 Q25,18 35,22 Q42,24 50,25 Z" fill="white"/>
-                <path d="M50,25 Q70,20 80,15 Q85,13 88,10 L85,12 Q75,18 65,22 Q58,24 50,25 Z" fill="white"/>
-                <path d="M50,22 Q35,18 25,12 Q20,9 15,5 L18,8 Q28,14 38,18 Q45,21 50,22 Z" fill="white"/>
-                <path d="M50,22 Q65,18 75,12 Q80,9 85,5 L82,8 Q72,14 62,18 Q55,21 50,22 Z" fill="white"/>
-                <path d="M50,28 Q38,30 28,35 Q23,38 18,42 L21,39 Q31,33 40,30 Q46,28 50,28 Z" fill="white"/>
-                <path d="M50,28 Q62,30 72,35 Q77,38 82,42 L79,39 Q69,33 60,30 Q54,28 50,28 Z" fill="white"/>
-                <path d="M50,20 Q40,15 30,8 Q25,5 20,2 L23,5 Q33,12 42,17 Q47,19 50,20 Z" fill="white"/>
-                <path d="M50,20 Q60,15 70,8 Q75,5 80,2 L77,5 Q67,12 58,17 Q53,19 50,20 Z" fill="white"/>
-                <path d="M50,30 Q42,35 35,42 Q30,47 25,52 L28,48 Q35,40 43,34 Q47,31 50,30 Z" fill="white"/>
-                <path d="M50,30 Q58,35 65,42 Q70,47 75,52 L72,48 Q65,40 57,34 Q53,31 50,30 Z" fill="white"/>
-                <path d="M50,18 Q45,12 40,5 Q38,2 35,0 L37,3 Q42,10 46,15 Q48,17 50,18 Z" fill="white"/>
-                <path d="M50,18 Q55,12 60,5 Q62,2 65,0 L63,3 Q58,10 54,15 Q52,17 50,18 Z" fill="white"/>
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Crescent Moon -->
+                <path d="M50,10 Q30,10 20,25 Q15,35 15,50 Q15,65 20,75 Q30,90 50,90 Q45,90 40,87 Q30,80 25,65 Q22,50 25,35 Q30,20 40,13 Q45,10 50,10 Z" fill="white"/>
                 
-                <!-- Center crown -->
-                <ellipse cx="50" cy="25" rx="8" ry="10" fill="white"/>
+                <!-- Paw prints around the moon -->
+                <!-- Top paw -->
+                <g transform="translate(65, 20)">
+                    <ellipse cx="0" cy="0" rx="4" ry="5" fill="white"/>
+                    <ellipse cx="-5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="7" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="-6" rx="2" ry="2.5" fill="white"/>
+                </g>
                 
-                <!-- Trunk with texture -->
-                <path d="M48,35 L52,35 L52,90 L48,90 Z" fill="white"/>
-                <path d="M46,40 L54,40 L53,45 L47,45 Z" fill="white" opacity="0.7"/>
-                <path d="M46,50 L54,50 L53,55 L47,55 Z" fill="white" opacity="0.7"/>
-                <path d="M46,60 L54,60 L53,65 L47,65 Z" fill="white" opacity="0.7"/>
-                <path d="M46,70 L54,70 L53,75 L47,75 Z" fill="white" opacity="0.7"/>
-                <path d="M46,80 L54,80 L53,85 L47,85 Z" fill="white" opacity="0.7"/>
+                <!-- Right paw -->
+                <g transform="translate(78, 50)">
+                    <ellipse cx="0" cy="0" rx="4" ry="5" fill="white"/>
+                    <ellipse cx="-5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="7" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="-6" rx="2" ry="2.5" fill="white"/>
+                </g>
                 
-                <!-- Base -->
-                <path d="M45,90 L55,90 L54,95 L46,95 Z" fill="white"/>
+                <!-- Bottom paw -->
+                <g transform="translate(65, 80)">
+                    <ellipse cx="0" cy="0" rx="4" ry="5" fill="white"/>
+                    <ellipse cx="-5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="7" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="5" cy="6" rx="2.5" ry="3" fill="white"/>
+                    <ellipse cx="0" cy="-6" rx="2" ry="2.5" fill="white"/>
+                </g>
             </svg>
             <h1>Palmetto Pups</h1>
         </div>
