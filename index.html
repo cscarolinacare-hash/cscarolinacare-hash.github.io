@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palmetto Pups - Dog Walking & Sitting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -30,22 +31,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
         .palmetto-tree {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             fill: white;
         }
 
         header h1 {
+            font-family: 'Merriweather', serif;
             font-size: 3.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
         }
 
         header p {
+            font-family: 'Merriweather', serif;
             font-size: 1.3rem;
             opacity: 0.95;
             font-style: italic;
@@ -233,8 +237,8 @@
             }
 
             .palmetto-tree {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
             }
 
             header h1 {
@@ -267,19 +271,35 @@
 <body>
     <header>
         <div class="header-title">
-            <svg class="palmetto-tree" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <!-- Palmetto tree silhouette -->
-                <path d="M50,10 Q40,15 35,25 Q30,35 28,45 L22,45 Q20,40 15,38 Q25,35 30,30 Q35,25 38,18 L50,10 Z" fill="white"/>
-                <path d="M50,10 Q60,15 65,25 Q70,35 72,45 L78,45 Q80,40 85,38 Q75,35 70,30 Q65,25 62,18 L50,10 Z" fill="white"/>
-                <path d="M50,12 Q45,20 42,30 Q40,40 38,50 L32,50 Q30,42 25,38 Q35,40 40,35 Q45,30 48,20 L50,12 Z" fill="white"/>
-                <path d="M50,12 Q55,20 58,30 Q60,40 62,50 L68,50 Q70,42 75,38 Q65,40 60,35 Q55,30 52,20 L50,12 Z" fill="white"/>
-                <path d="M50,15 Q48,25 46,35 Q45,45 44,55 L40,55 Q38,48 34,45 Q42,47 46,42 Q48,37 49,28 L50,15 Z" fill="white"/>
-                <path d="M50,15 Q52,25 54,35 Q55,45 56,55 L60,55 Q62,48 66,45 Q58,47 54,42 Q52,37 51,28 L50,15 Z" fill="white"/>
-                <path d="M50,18 Q49,28 48,38 Q47,48 46,58 L44,58 Q42,52 39,50 Q45,52 48,48 Q49,43 49.5,33 L50,18 Z" fill="white"/>
-                <path d="M50,18 Q51,28 52,38 Q53,48 54,58 L56,58 Q58,52 61,50 Q55,52 52,48 Q51,43 50.5,33 L50,18 Z" fill="white"/>
-                <!-- Trunk -->
-                <rect x="47" y="55" width="6" height="35" fill="white"/>
-                <path d="M45,90 L55,90 L53,95 L47,95 Z" fill="white"/>
+            <svg class="palmetto-tree" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- Realistic palmetto tree silhouette based on the uploaded image -->
+                <!-- Fronds (palm leaves) -->
+                <path d="M50,25 Q30,20 20,15 Q15,13 12,10 L15,12 Q25,18 35,22 Q42,24 50,25 Z" fill="white"/>
+                <path d="M50,25 Q70,20 80,15 Q85,13 88,10 L85,12 Q75,18 65,22 Q58,24 50,25 Z" fill="white"/>
+                <path d="M50,22 Q35,18 25,12 Q20,9 15,5 L18,8 Q28,14 38,18 Q45,21 50,22 Z" fill="white"/>
+                <path d="M50,22 Q65,18 75,12 Q80,9 85,5 L82,8 Q72,14 62,18 Q55,21 50,22 Z" fill="white"/>
+                <path d="M50,28 Q38,30 28,35 Q23,38 18,42 L21,39 Q31,33 40,30 Q46,28 50,28 Z" fill="white"/>
+                <path d="M50,28 Q62,30 72,35 Q77,38 82,42 L79,39 Q69,33 60,30 Q54,28 50,28 Z" fill="white"/>
+                <path d="M50,20 Q40,15 30,8 Q25,5 20,2 L23,5 Q33,12 42,17 Q47,19 50,20 Z" fill="white"/>
+                <path d="M50,20 Q60,15 70,8 Q75,5 80,2 L77,5 Q67,12 58,17 Q53,19 50,20 Z" fill="white"/>
+                <path d="M50,30 Q42,35 35,42 Q30,47 25,52 L28,48 Q35,40 43,34 Q47,31 50,30 Z" fill="white"/>
+                <path d="M50,30 Q58,35 65,42 Q70,47 75,52 L72,48 Q65,40 57,34 Q53,31 50,30 Z" fill="white"/>
+                <path d="M50,18 Q45,12 40,5 Q38,2 35,0 L37,3 Q42,10 46,15 Q48,17 50,18 Z" fill="white"/>
+                <path d="M50,18 Q55,12 60,5 Q62,2 65,0 L63,3 Q58,10 54,15 Q52,17 50,18 Z" fill="white"/>
+                
+                <!-- Center crown -->
+                <ellipse cx="50" cy="25" rx="8" ry="10" fill="white"/>
+                
+                <!-- Trunk with texture -->
+                <path d="M48,35 L52,35 L52,90 L48,90 Z" fill="white"/>
+                <path d="M46,40 L54,40 L53,45 L47,45 Z" fill="white" opacity="0.7"/>
+                <path d="M46,50 L54,50 L53,55 L47,55 Z" fill="white" opacity="0.7"/>
+                <path d="M46,60 L54,60 L53,65 L47,65 Z" fill="white" opacity="0.7"/>
+                <path d="M46,70 L54,70 L53,75 L47,75 Z" fill="white" opacity="0.7"/>
+                <path d="M46,80 L54,80 L53,85 L47,85 Z" fill="white" opacity="0.7"/>
+                
+                <!-- Base -->
+                <path d="M45,90 L55,90 L54,95 L46,95 Z" fill="white"/>
             </svg>
             <h1>Palmetto Pups</h1>
         </div>
