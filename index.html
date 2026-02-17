@@ -20,6 +20,66 @@
             background-color: #f5f5f5;
             position: relative;
             overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #002868;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links li {
+            padding: 1rem 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* Paw Print Background */
@@ -210,8 +270,15 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
+        }
+
+        .service-note {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 1rem;
         }
 
         .service-options {
@@ -553,6 +620,17 @@
             z-index: 2;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
         @media (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: 1fr;
@@ -560,6 +638,35 @@
         }
 
         @media (max-width: 768px) {
+            .nav-container {
+                justify-content: space-between;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background: #002868;
+                padding: 2rem;
+                gap: 0;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
             header h1 {
                 font-size: 2.5rem;
             }
@@ -591,24 +698,37 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+                <li><a href="#services" onclick="closeMenu()">Our Services</a></li>
+                <li><a href="#packages" onclick="closeMenu()">Package Deals</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <h1>Palmetto Pups</h1>
-        <p>"Care You Can Trust"</p>
+        <p>Care You Can Trust</p>
     </header>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
         <h2 class="section-header">About Us</h2>
         <div class="about-content">
             Hi! We're two responsible high school students based in Chapin SC, with a genuine love for animals. As dedicated students and pet owners ourselves, we understand how important it is to have someone you can trust caring for your pets. We offer reliable dog walking and pet sitting services with a focus on safety, attention and plenty of love. Our goal is to give pet parents peace of mind while keeping your pets happy and active!
         </div>
     </section>
 
-    <section class="services-container">
+    <section class="services-container" id="services">
         <h2 class="section-header">Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-content">
                     <div class="service-name">Walks</div>
+                    <div class="service-note">(Dependent on size of dogs - Max 3 dogs)</div>
                     <div class="service-options">
                         <div class="service-option">
                             <div>
@@ -649,8 +769,8 @@
         </div>
     </section>
 
-    <section class="package-section">
-        <h2 class="section-header">Package Options</h2>
+    <section class="package-section" id="packages">
+        <h2 class="section-header">Package Deals</h2>
         
         <div class="package-card">
             <div class="package-badge">BEST VALUE</div>
@@ -674,7 +794,7 @@
             <div class="calculator-item">
                 <div class="item-info">
                     <div class="item-name">1 Mile Walk</div>
-                    <div class="item-price">$8.00 each (+$4 per additional dog)</div>
+                    <div class="item-price">$8.00 each (+$4 per additional dog, max 3 dogs)</div>
                 </div>
                 <div class="item-controls">
                     <button class="quantity-btn" onclick="updateQuantity('walk1', -1)">-</button>
@@ -682,7 +802,7 @@
                     <button class="quantity-btn" onclick="updateQuantity('walk1', 1)">+</button>
                     <div class="dog-count-selector">
                         <label for="walk1-dogs">Dogs:</label>
-                        <input type="number" id="walk1-dogs" min="1" value="1" onchange="updateTotal()">
+                        <input type="number" id="walk1-dogs" min="1" max="3" value="1" onchange="updateTotal()">
                     </div>
                 </div>
             </div>
@@ -690,7 +810,7 @@
             <div class="calculator-item">
                 <div class="item-info">
                     <div class="item-name">2 Mile Walk</div>
-                    <div class="item-price">$15.00 each (+$4 per additional dog)</div>
+                    <div class="item-price">$15.00 each (+$4 per additional dog, max 3 dogs)</div>
                 </div>
                 <div class="item-controls">
                     <button class="quantity-btn" onclick="updateQuantity('walk2', -1)">-</button>
@@ -698,7 +818,7 @@
                     <button class="quantity-btn" onclick="updateQuantity('walk2', 1)">+</button>
                     <div class="dog-count-selector">
                         <label for="walk2-dogs">Dogs:</label>
-                        <input type="number" id="walk2-dogs" min="1" value="1" onchange="updateTotal()">
+                        <input type="number" id="walk2-dogs" min="1" max="3" value="1" onchange="updateTotal()">
                     </div>
                 </div>
             </div>
@@ -728,7 +848,7 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <h2 class="section-header">Contact Us</h2>
         <p style="font-size: 1.1rem; color: #555; margin-bottom: 1rem;">Ready to schedule a walk or have questions? Get in touch with us!</p>
         <a href="mailto:cscarolinacare@gmail.com" class="contact-button">Send Us an Email</a>
@@ -751,6 +871,16 @@
             checkin: 0
         };
 
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
         function updateQuantity(service, change) {
             quantities[service] = Math.max(0, quantities[service] + change);
             document.getElementById(service + '-qty').textContent = quantities[service];
@@ -760,9 +890,13 @@
         function updateTotal() {
             let subtotal = 0;
             
-            // Calculate walk prices with per-dog fee
-            const walk1Dogs = parseInt(document.getElementById('walk1-dogs').value) || 1;
-            const walk2Dogs = parseInt(document.getElementById('walk2-dogs').value) || 1;
+            // Calculate walk prices with per-dog fee (max 3 dogs)
+            const walk1Dogs = Math.min(3, Math.max(1, parseInt(document.getElementById('walk1-dogs').value) || 1));
+            const walk2Dogs = Math.min(3, Math.max(1, parseInt(document.getElementById('walk2-dogs').value) || 1));
+            
+            // Enforce max 3 dogs
+            document.getElementById('walk1-dogs').value = walk1Dogs;
+            document.getElementById('walk2-dogs').value = walk2Dogs;
             
             // Base price + $4 for each additional dog
             const walk1Price = prices.walk1 + (Math.max(0, walk1Dogs - 1) * 4);
