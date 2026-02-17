@@ -82,7 +82,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -109,7 +109,33 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: #333;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-options {
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .service-option {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-option:last-child {
+            border-bottom: none;
+        }
+
+        .option-name {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .option-price {
+            color: #002868;
             font-weight: 600;
         }
 
@@ -213,6 +239,94 @@
             font-weight: bold;
         }
 
+        /* Custom Package Calculator */
+        .custom-package {
+            background: white;
+            border-radius: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .calculator-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .calculator-item:last-of-type {
+            border-bottom: 2px solid #002868;
+            margin-bottom: 1rem;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-price {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quantity-btn {
+            background: #002868;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #001a4d;
+        }
+
+        .quantity-display {
+            min-width: 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .total-section {
+            padding: 1.5rem 0;
+            text-align: right;
+        }
+
+        .total-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .total-amount {
+            font-size: 2rem;
+            color: #002868;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+
         .contact-section {
             background-color: #e8e8e8;
             padding: 4rem 2rem;
@@ -250,7 +364,7 @@
 
         @media (max-width: 1024px) {
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
         }
 
@@ -263,12 +377,19 @@
                 font-size: 1.1rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
             .section-header {
                 font-size: 1.6rem;
+            }
+
+            .calculator-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .item-controls {
+                width: 100%;
+                justify-content: flex-end;
             }
         }
     </style>
@@ -282,7 +403,7 @@
     <section class="about-section">
         <h2 class="section-header">About Us</h2>
         <div class="about-content">
-            Hi! We're two responsible high school students with a genuine love for animals. As dedicated students and pet owners ourselves, we understand how important it is to have someone you can trust caring for your pets. We offer reliable dog walking and pet sitting services with a focus on safety, attention and plenty of love. Our goal is to give pet owners peace of mind while keeping your pets happy and active!
+            Hi! We're two responsible high school students based in Chapin SC, with a genuine love for animals. As dedicated students and pet owners ourselves, we understand how important it is to have someone you can trust caring for your pets. We offer reliable dog walking and pet sitting services with a focus on safety, attention and plenty of love. Our goal is to give pet owners peace of mind while keeping your pets happy and active!
         </div>
     </section>
 
@@ -291,27 +412,26 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-content">
-                    <div class="service-name">1 Mile Walk</div>
-                    <div class="service-price">$8.00</div>
+                    <div class="service-name">Walks</div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1 Mile Walk</span>
+                            <span class="option-price">$8.00</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">2 Mile Walk</span>
+                            <span class="option-price">$15.00</span>
+                        </div>
+                    </div>
                     <div class="service-description">
-                        Perfect for a quick potty break and some fresh air! Your pup will enjoy a leisurely stroll around the neighborhood.
+                        From quick potty breaks to extended adventures, we'll give your pup the exercise and fresh air they need!
                     </div>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-content">
-                    <div class="service-name">2 Mile Walk</div>
-                    <div class="service-price">$15.00</div>
-                    <div class="service-description">
-                        An extended adventure for energetic pups! We'll explore further and give your furry friend plenty of exercise and enrichment.
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-content">
-                    <div class="service-name">One Check-In</div>
+                    <div class="service-name">Check-In</div>
                     <div class="service-price">$10.00</div>
                     <div class="service-description">
                         We'll stop by to give your pup some love and care while you're away!
@@ -328,20 +448,66 @@
     </section>
 
     <section class="package-section">
-        <h2 class="section-header">Special Package</h2>
+        <h2 class="section-header">Package Options</h2>
+        
         <div class="package-card">
             <div class="package-badge">BEST VALUE</div>
-            <div class="package-header">Gone For a Day? Try Our Pup Package!</div>
+            <div class="package-header">Pup Package</div>
             <div class="package-price">$33.00</div>
             <div class="package-description">
-                Everything your pup needs while you're out for the day!
+                Gone for a day? This package has everything your pup needs!
                 <ul>
                     <li>Three home check-ins</li>
-                    <li>One basic walk</li>
+                    <li>One 1-mile walk</li>
                     <li>Food, water, and bathroom breaks</li>
                     <li>Regular updates throughout the day</li>
                     <li>Peace of mind for pet parents</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="custom-package">
+            <h3 class="package-header" style="margin-bottom: 2rem;">Build Your Own Custom Package</h3>
+            
+            <div class="calculator-item">
+                <div class="item-info">
+                    <div class="item-name">1 Mile Walk</div>
+                    <div class="item-price">$8.00 each</div>
+                </div>
+                <div class="item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('walk1', -1)">-</button>
+                    <span class="quantity-display" id="walk1-qty">0</span>
+                    <button class="quantity-btn" onclick="updateQuantity('walk1', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="calculator-item">
+                <div class="item-info">
+                    <div class="item-name">2 Mile Walk</div>
+                    <div class="item-price">$15.00 each</div>
+                </div>
+                <div class="item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('walk2', -1)">-</button>
+                    <span class="quantity-display" id="walk2-qty">0</span>
+                    <button class="quantity-btn" onclick="updateQuantity('walk2', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="calculator-item">
+                <div class="item-info">
+                    <div class="item-name">Check-In</div>
+                    <div class="item-price">$10.00 each</div>
+                </div>
+                <div class="item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('checkin', -1)">-</button>
+                    <span class="quantity-display" id="checkin-qty">0</span>
+                    <button class="quantity-btn" onclick="updateQuantity('checkin', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="total-section">
+                <span class="total-label">Total:</span>
+                <span class="total-amount" id="total-price">$0.00</span>
             </div>
         </div>
     </section>
@@ -355,5 +521,33 @@
     <footer>
         <p>&copy; 2024 Palmetto Pups. All rights reserved. Made with ❤️ for your furry friends!</p>
     </footer>
+
+    <script>
+        const prices = {
+            walk1: 8.00,
+            walk2: 15.00,
+            checkin: 10.00
+        };
+
+        const quantities = {
+            walk1: 0,
+            walk2: 0,
+            checkin: 0
+        };
+
+        function updateQuantity(service, change) {
+            quantities[service] = Math.max(0, quantities[service] + change);
+            document.getElementById(service + '-qty').textContent = quantities[service];
+            updateTotal();
+        }
+
+        function updateTotal() {
+            let total = 0;
+            for (let service in quantities) {
+                total += quantities[service] * prices[service];
+            }
+            document.getElementById('total-price').textContent = '$' + total.toFixed(2);
+        }
+    </script>
 </body>
 </html>
