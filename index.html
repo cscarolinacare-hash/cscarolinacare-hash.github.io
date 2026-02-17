@@ -18,6 +18,36 @@
             color: #333;
             scroll-behavior: smooth;
             background-color: #f5f5f5;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Paw Print Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 15%, rgba(0, 40, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 25%, rgba(0, 40, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 45%, rgba(0, 40, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(0, 40, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 15% 75%, rgba(0, 40, 104, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(0, 40, 104, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .paw-print {
+            position: absolute;
+            opacity: 0.08;
+            color: #002868;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 1;
         }
 
         header {
@@ -26,6 +56,28 @@
             padding: 3rem 2rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before,
+        header::after {
+            content: '🐾';
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+        }
+
+        header::before {
+            top: 1rem;
+            left: 2rem;
+            transform: rotate(-15deg);
+        }
+
+        header::after {
+            bottom: 1rem;
+            right: 2rem;
+            transform: rotate(15deg);
         }
 
         header h1 {
@@ -34,6 +86,8 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             font-weight: 700;
             margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
         }
 
         header p {
@@ -41,12 +95,16 @@
             font-size: 1.3rem;
             opacity: 0.95;
             font-style: italic;
+            position: relative;
+            z-index: 2;
         }
 
         section {
             padding: 4rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .section-header {
@@ -58,11 +116,23 @@
             text-align: left;
             padding-left: 1rem;
             border-left: 4px solid #002868;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '🐾';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
         }
 
         .about-section {
             background-color: white;
             padding: 4rem 2rem;
+            position: relative;
         }
 
         .about-content {
@@ -73,11 +143,31 @@
             line-height: 1.8;
             text-align: center;
             padding: 2rem;
+            position: relative;
+        }
+
+        .about-content::before,
+        .about-content::after {
+            content: '🐾';
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+        }
+
+        .about-content::before {
+            top: 0;
+            left: 0;
+        }
+
+        .about-content::after {
+            bottom: 0;
+            right: 0;
         }
 
         .services-container {
             background-color: #e8e8e8;
             padding: 4rem 2rem;
+            position: relative;
         }
 
         .services-grid {
@@ -93,6 +183,17 @@
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '🐾';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2.5rem;
+            opacity: 0.05;
+            pointer-events: none;
         }
 
         .service-card:hover {
@@ -173,16 +274,17 @@
         }
 
         .service-description ul li::before {
-            content: '•';
+            content: '🐾';
             position: absolute;
-            left: 0;
-            color: #002868;
-            font-weight: bold;
+            left: -0.3rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
         }
 
         .package-section {
             background-color: white;
             padding: 4rem 2rem;
+            position: relative;
         }
 
         .package-card {
@@ -192,6 +294,16 @@
             border: 1px solid #ddd;
             padding: 3rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .package-card::after {
+            content: '🐾';
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            opacity: 0.05;
         }
 
         .package-header {
@@ -238,11 +350,11 @@
         }
 
         .package-description ul li::before {
-            content: '✓';
+            content: '🐾';
             position: absolute;
             left: 0;
-            color: #002868;
-            font-weight: bold;
+            font-size: 0.9rem;
+            opacity: 0.6;
         }
 
         /* Custom Package Calculator */
@@ -252,6 +364,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 2rem;
             margin-top: 2rem;
+            position: relative;
         }
 
         .calculator-item {
@@ -300,12 +413,13 @@
             color: #666;
         }
 
-        .dog-count-selector select {
+        .dog-count-selector input {
+            width: 60px;
             padding: 0.3rem 0.5rem;
             border: 1px solid #ddd;
             border-radius: 3px;
             font-size: 0.9rem;
-            background: white;
+            text-align: center;
         }
 
         .quantity-btn {
@@ -383,6 +497,7 @@
             background-color: #e8e8e8;
             padding: 4rem 2rem;
             text-align: center;
+            position: relative;
         }
 
         .contact-button {
@@ -407,11 +522,35 @@
             color: white;
             text-align: center;
             padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before,
+        footer::after {
+            content: '🐾';
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        footer::before {
+            top: 50%;
+            left: 2rem;
+            transform: translateY(-50%) rotate(-20deg);
+        }
+
+        footer::after {
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%) rotate(20deg);
         }
 
         footer p {
             font-size: 0.95rem;
             opacity: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 1024px) {
@@ -454,7 +593,7 @@
 <body>
     <header>
         <h1>Palmetto Pups</h1>
-        <p>Care You Can Trust</p>
+        <p>"Care You Can Trust"</p>
     </header>
 
     <section class="about-section">
@@ -474,14 +613,14 @@
                         <div class="service-option">
                             <div>
                                 <div class="option-name">1 Mile Walk</div>
-                                <div class="option-note">(+$4 for 2+ dogs)</div>
+                                <div class="option-note">(+$4 per additional dog)</div>
                             </div>
                             <span class="option-price">$8.00</span>
                         </div>
                         <div class="service-option">
                             <div>
                                 <div class="option-name">2 Mile Walk</div>
-                                <div class="option-note">(+$4 for 2+ dogs)</div>
+                                <div class="option-note">(+$4 per additional dog)</div>
                             </div>
                             <span class="option-price">$15.00</span>
                         </div>
@@ -535,7 +674,7 @@
             <div class="calculator-item">
                 <div class="item-info">
                     <div class="item-name">1 Mile Walk</div>
-                    <div class="item-price">$8.00 each (+$4 for 2+ dogs)</div>
+                    <div class="item-price">$8.00 each (+$4 per additional dog)</div>
                 </div>
                 <div class="item-controls">
                     <button class="quantity-btn" onclick="updateQuantity('walk1', -1)">-</button>
@@ -543,10 +682,7 @@
                     <button class="quantity-btn" onclick="updateQuantity('walk1', 1)">+</button>
                     <div class="dog-count-selector">
                         <label for="walk1-dogs">Dogs:</label>
-                        <select id="walk1-dogs" onchange="updateTotal()">
-                            <option value="1">1</option>
-                            <option value="2">2+</option>
-                        </select>
+                        <input type="number" id="walk1-dogs" min="1" value="1" onchange="updateTotal()">
                     </div>
                 </div>
             </div>
@@ -554,7 +690,7 @@
             <div class="calculator-item">
                 <div class="item-info">
                     <div class="item-name">2 Mile Walk</div>
-                    <div class="item-price">$15.00 each (+$4 for 2+ dogs)</div>
+                    <div class="item-price">$15.00 each (+$4 per additional dog)</div>
                 </div>
                 <div class="item-controls">
                     <button class="quantity-btn" onclick="updateQuantity('walk2', -1)">-</button>
@@ -562,10 +698,7 @@
                     <button class="quantity-btn" onclick="updateQuantity('walk2', 1)">+</button>
                     <div class="dog-count-selector">
                         <label for="walk2-dogs">Dogs:</label>
-                        <select id="walk2-dogs" onchange="updateTotal()">
-                            <option value="1">1</option>
-                            <option value="2">2+</option>
-                        </select>
+                        <input type="number" id="walk2-dogs" min="1" value="1" onchange="updateTotal()">
                     </div>
                 </div>
             </div>
@@ -627,12 +760,13 @@
         function updateTotal() {
             let subtotal = 0;
             
-            // Calculate walk prices with dog fee
-            const walk1Dogs = document.getElementById('walk1-dogs').value;
-            const walk2Dogs = document.getElementById('walk2-dogs').value;
+            // Calculate walk prices with per-dog fee
+            const walk1Dogs = parseInt(document.getElementById('walk1-dogs').value) || 1;
+            const walk2Dogs = parseInt(document.getElementById('walk2-dogs').value) || 1;
             
-            const walk1Price = prices.walk1 + (walk1Dogs === '2' ? 4 : 0);
-            const walk2Price = prices.walk2 + (walk2Dogs === '2' ? 4 : 0);
+            // Base price + $4 for each additional dog
+            const walk1Price = prices.walk1 + (Math.max(0, walk1Dogs - 1) * 4);
+            const walk2Price = prices.walk2 + (Math.max(0, walk2Dogs - 1) * 4);
             
             subtotal += quantities.walk1 * walk1Price;
             subtotal += quantities.walk2 * walk2Price;
@@ -653,19 +787,17 @@
         }
 
         function sendOrder() {
-            const walk1Dogs = document.getElementById('walk1-dogs').value;
-            const walk2Dogs = document.getElementById('walk2-dogs').value;
+            const walk1Dogs = parseInt(document.getElementById('walk1-dogs').value) || 1;
+            const walk2Dogs = parseInt(document.getElementById('walk2-dogs').value) || 1;
             
             let orderDetails = "Order Details:\n\n";
             
             if (quantities.walk1 > 0) {
-                const dogText = walk1Dogs === '2' ? ' (2+ dogs)' : '';
-                orderDetails += `${quantities.walk1} x 1 Mile Walk${dogText}\n`;
+                orderDetails += `${quantities.walk1} x 1 Mile Walk (${walk1Dogs} dog${walk1Dogs > 1 ? 's' : ''})\n`;
             }
             
             if (quantities.walk2 > 0) {
-                const dogText = walk2Dogs === '2' ? ' (2+ dogs)' : '';
-                orderDetails += `${quantities.walk2} x 2 Mile Walk${dogText}\n`;
+                orderDetails += `${quantities.walk2} x 2 Mile Walk (${walk2Dogs} dog${walk2Dogs > 1 ? 's' : ''})\n`;
             }
             
             if (quantities.checkin > 0) {
